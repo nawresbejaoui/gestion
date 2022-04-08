@@ -1,16 +1,27 @@
 package com.app.springboot.Model;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import lombok.*;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
+@Builder
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table (name="Stock")
 public class Stock {
-
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
     @Column(name="quantite")
     private BigDecimal quantite;
 
-    @OneToMany
-    @JoinColumn(name="idarticle")
-    private Article article;
+    @OneToMany(mappedBy = "mystock")
+    private List<Article> article;
+
+
+
 }

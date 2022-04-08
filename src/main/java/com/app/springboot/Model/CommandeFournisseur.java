@@ -34,7 +34,7 @@ public class CommandeFournisseur {
     private Fournisseur fournisseur;
 
 
-    @OneToMany(mappedBy="commandeFournisseur")
+    @OneToMany(mappedBy="commandefournisseurs")
     private List<LigneCommandeFour>lignecommandefournisseurs;
 }
 

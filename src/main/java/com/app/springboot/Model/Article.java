@@ -35,6 +35,10 @@ public class Article  {
     @Column(name="prixunitairettc")
     private BigDecimal prixUnitaireTtc;
 
+    @ManyToOne
+    @JoinColumn(name="stock")
+     private Stock mystock;
+
 
 
 
